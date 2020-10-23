@@ -1,0 +1,36 @@
+SET client_min_messages TO WARNING;
+
+-- -----------------------------------------------------
+-- HPO Annotations (Gene to Phenotype Associations)
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS gd.HPO_gene_to_phenotype;
+
+CREATE TABLE IF NOT EXISTS gd.HPO_gene_to_phenotype (
+    id                  BIGSERIAL PRIMARY KEY,
+    entrez_gene_id      BIGSERIAL,
+    entrez_gene_symbol  TEXT,
+    hpo_term            TEXT,
+    hpo_id              TEXT,
+    hpo_term_tokens     TSVECTOR
+);
+
+-- -----------------------------------------------------
+-- Copy CSV to database
+-- -----------------------------------------------------
+COPY gd.HPO_gene_to_phenotype (entrez_gene_id, entrez_gene_symbol, hpo_term, hpo_id) FROM '%DIR%' DELIMITER E'\t' CSV HEADER;
+
+-- -----------------------------------------------------
+-- Generate lexical tokens (tsvector) on 'hpo_term'
+-- -----------------------------------------------------
+UPDATE gd.HPO_gene_to_phenotype SET hpo_term_tokens = to_tsvector(hpo_term);
+CREATE INDEX hpo_term_tokens_idx ON gd.HPO_gene_to_phenotype USING GIST(hpo_term_tokens);
+
+-- -----------------------------------------------------
+-- Refresh Privileges
+-- -----------------------------------------------------
+GRANT ALL PRIVILEGES ON SCHEMA gd TO diver;
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA gd TO diver;
+GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA gd TO diver;
+GRANT ALL PRIVILEGES ON ALL FUNCTIONS IN SCHEMA gd TO diver;
+
+ALTER TABLE gd.HPO_gene_to_phenotype OWNER TO diver;

@@ -1,0 +1,24 @@
+body.home {
+    overflow:hidden;
+}
+body.home #root {
+    height:100%;
+}
+body.home .ant-layout {
+    height:100%;
+
+    background: #a7cfdf; /* Old browsers */
+    background: -moz-linear-gradient(-45deg, #a7cfdf 0%, #23538a 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, #a7cfdf 0%,#23538a 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, #a7cfdf 0%,#23538a 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a7cfdf', endColorstr='#23538a',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+.particles {
+  position: fixed;
+  right: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}

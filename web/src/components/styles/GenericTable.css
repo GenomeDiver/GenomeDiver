@@ -1,0 +1,7 @@
+div.expansion-controls {
+    margin:0px;
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    background: rgba(0, 0, 0, 0.03);
+}

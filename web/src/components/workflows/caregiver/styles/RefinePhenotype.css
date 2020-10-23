@@ -1,0 +1,126 @@
+.refine-draggable {
+    position:relative;
+    padding: 8px 12px;
+    border-radius:5px;
+    margin-top: 10px;
+    display: block;
+}
+
+/* support for horizontal scrolling */ 
+.refine-droppable .refine-.scroller {
+    height:100%;
+    display:block;
+}
+
+.refine-droppable.category-UNASSIGNED {
+    position:relative;
+    width:100%;
+}
+
+.refine-droppable.category-UNASSIGNED .refine-scroller {   
+    overflow-x:auto;
+    padding:45px 0px 0px 0px;
+    min-width: 100%;
+    min-height:120px;
+}
+
+.refine-droppable.category-UNASSIGNED .refine-draggable {
+    margin-right:10px;
+    margin-bottom:10px;
+    width:340px;
+    display:inline-block;
+    /* overflow-x: scroll */
+}
+
+.refine-droppable.category-UNASSIGNED .refine-droppable-context {
+    display:inline-flex;
+    flex-wrap:nowrap;
+    min-width:100%;
+}
+
+.refine-draggable .anticon-pushpin {
+    position: absolute;
+    right:5px;
+    top: 5px;
+    color:lightcoral;
+    opacity: 0.8;
+    font-size: 1.2em;
+}
+
+.refine-draggable.is-dragging {
+    border:1px solid lightcoral;
+    opacity: 0.9;
+}
+
+.refine-droppable {
+    grid-row:2;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.06);
+    border-radius: 5px;
+    font-size: 1em;
+    
+    display:flex;
+    flex-direction: column;
+}
+
+/* .refine-droppable .ant-rate-star-first, .refine-droppable .ant-rate-star-second {
+    color: #d9d9d9;
+} */
+
+.refine-droppable.category-UNASSIGNED {
+   background: rgba(0, 0, 0, 0.06);
+   grid-row: 1;
+   grid-column-start: 1;
+   grid-column-end: 4;
+   flex-flow:row nowrap;
+}
+
+.refine-droppable span.category-title {
+    font-size:1.1em;
+    color:#000;
+    padding: 10px; 
+    border-radius: 4px;
+    display: inline-block;
+    width: 100%;
+    text-transform:uppercase;
+ }
+ 
+ /*  Inverse  */
+.refine-droppable.category-UNKNOWN span.category-title {
+    color:#FFF;
+    background:#bfbfbf;   
+ }
+
+ .refine-droppable.category-ABSENT span.category-title {
+    color:#000;
+    background:#fdfdfd;   
+ }
+
+ .refine-droppable.category-PRESENT span.category-title {
+    color:#FFF;
+    background:rgb(0 0 0 / 0.60); 
+ }
+
+.refine-droppable-context {
+    flex-grow:1;
+    /* height:100%;*/
+    min-height: 100px;
+}
+
+.refine-droppable-context[data-rbd-droppable-id="UNASSIGNED"] .ant-rate,
+.refine-droppable-context[data-rbd-droppable-id="UNKNOWN"] .ant-rate {
+    visibility: hidden;
+}
+
+/* Using CSS Grid*/
+.refine-dnd-context {
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 12px;
+    grid-template-columns: repeat(3, 1fr);
+
+    min-height: 420px;
+    margin-top:  12px;
+    margin-bottom: 12px;
+    width: 100%;
+}

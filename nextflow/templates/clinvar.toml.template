@@ -1,0 +1,12 @@
+[[annotation]]
+file="$clinvar"
+fields=["CLNSIG", "CLNREVSTAT"]
+names=["clinvar_pathogenic", "clinvar_review"]
+ops=["self", "self"]
+
+# convert 5 to 'pathogenic', 255 to 'unknown', etc.
+[[postannotation]]
+fields=["clinvar_pathogenic"]
+op="lua:clinvar_sig(clinvar_pathogenic)"
+name="clinvar_sig"
+type="String"

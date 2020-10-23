@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #f0f2f5;
+
+  /* heading: RobotoCondensed */
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.gd-heading {
+  font-family: "Roboto Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+    color:#1790ff;
+}
+
+
+code {font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;}

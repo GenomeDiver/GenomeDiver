@@ -1,0 +1,24 @@
+<configuration>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <!--pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern -->
+            <pattern>%d{HH:mm:ss.SSS} %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- .... too much noise in logs -->
+    <logger name="com.zaxxer.hikari.HikariConfig"           level="OFF"/>
+    <logger name="com.zaxxer.hikari.pool.HikariPool"        level="OFF"/>
+    <logger name="com.zaxxer.hikari.pool.PoolBase"          level="WARN"/>
+    <logger name="com.zaxxer.hikari.HikariDataSource"       level="WARN"/>
+    <logger name="org.jooq.tools.LoggerListener"            level="OFF"/>
+    <logger name="org.jooq.impl.DefaultConnectionProvider"  level="OFF"/>
+
+    <!-- Jooq Banner -->
+    <logger name="org.jooq.Constants"                  level="OFF"/>
+
+    <root level="debug">
+        <appender-ref ref="STDOUT"/>
+    </root>
+
+</configuration>

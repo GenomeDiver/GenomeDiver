@@ -1,0 +1,7 @@
+*.jar binary 
+*.sln binary
+*.suo binary
+*.vcxproj binary
+*.tab binary
+./lib binary
+./scripts/Ensembl/*.tsv binary

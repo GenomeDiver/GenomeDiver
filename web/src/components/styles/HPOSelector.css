@@ -1,0 +1,89 @@
+div.ontology-select div.ant-select-selection__choice__content li:nth-child(2) {
+    visibility:hidden;
+}
+div.ontology-select {
+    min-width:100%;   
+    position:relative;
+    cursor: text;
+}
+
+div.ontology-select::before {
+    content:"";
+    background-image: url("/images/doctor.svg");
+    background-size: auto 75%;
+    background-repeat:no-repeat;
+    background-position: center center;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    opacity:0.2
+}
+
+div.ontology-select.min::before, div.refine-dnd-wrapper::before  {
+    background-image:none;
+    left:10px;
+    top:40px;
+    opacity:1;
+    position: relative;
+    color:#000;  
+    border-radius: 4px;
+    padding: 10px 10px;
+    font-weight:bold;
+    font-size: 1.0em;
+}
+
+div.ontology-select.min::before {
+    content:"Add phenotype feature:";
+    text-transform:uppercase;
+}
+
+/* div.refine-dnd-wrapper, div.ontology-select.min {
+    padding-top:10px;
+} */
+
+/* div.refine-dnd-wrapper::before {
+    content:"Classify GenomeDiver generated phenotypes:";
+    top: 10px;
+    font-size:14px;
+}*/ 
+
+div.ontology-select.ant-select-focused {
+    outline-width:0;
+}
+
+div.ontology-select div.ant-select-selection--multiple {
+    min-height:320px;
+    margin:0px;
+    padding:10px;
+}
+
+div.ontology-select.min div.ant-select-selection--multiple {
+    min-height:42px;
+    padding: 50px 10px 5px 10px;
+    background: rgba(0, 0, 0, 0.06);
+}
+
+div.ontology-select div.ant-select-selection--multiple:hover {
+    border-color: #40a9ff;
+}
+
+/* ontology dropdown menu is outside */
+li.ant-select-dropdown-menu-item  {
+    white-space: inherit;
+    padding-left: 0;
+}
+
+li.ant-select-dropdown-menu-item ul {
+    padding: 8px 16px;
+}
+
+/* lab specific style */ 
+/* div.ontology-select.lab .ant-select-selection--multiple > ul > 
+li, .ant-select-selection--multiple .ant-select-selection__rendered > ul > li {
+    height: 44px;
+    line-height: 22px;
+    padding: 10px 18px 10px 10px;
+    margin: 10px 10px 0 0;
+} */

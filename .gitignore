@@ -1,0 +1,76 @@
+# Editors
+**.metals
+**.ammonite
+
+# Scala Targets/Classes
+target
+*.class
+
+# Config Object
+application.conf
+
+# Anything Generated from scripts
+*.generated.*
+*.dump
+
+# Jooq
+jooq-codegen.xml
+
+# IntelliJ 
+*.iml
+*.ipr
+*.iws
+.idea
+out
+
+# vim
+tags
+.*.swp
+.*.swo
+
+# OSX 
+.DS_Store
+
+# Shell
+/*.sh
+
+# Notes 
+notes-private
+notes-goals*
+**/TODO.txt
+
+# Frontend Build Artifacts
+src/main/resources/build
+
+# ignore tests for now
+tests/**
+
+# production
+nextflow/production/**
+
+# service
+service
+
+# scripts
+scripts
+
+# nextflow testing
+.nextflow
+.nextflow.log*
+debug.log
+work
+
+# dowanloaded and generated files
+database/GenomeDiver/*/download
+database/GenomeDiver/*/sql
+database/GenomeDiver/*/diver.pgsql
+
+# Python Scripts
+.env/
+
+# Ontology Related Files
+*.obo
+*.owl
+
+# notes
+notes

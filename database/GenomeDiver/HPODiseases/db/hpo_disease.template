@@ -1,0 +1,36 @@
+SET client_min_messages TO WARNING;
+-- -----------------------------------------------------
+-- HPO Annotations (New Format)
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS gd.HPO_disease;
+CREATE TABLE IF NOT EXISTS gd.HPO_disease (
+    id              BIGSERIAL PRIMARY KEY,
+    database_id     TEXT,
+    disease_name    TEXT,
+    qualifier       TEXT,
+    hpo_id          TEXT,
+    reference       TEXT,
+    evidence        TEXT,
+    onset           TEXT,
+    frequency       TEXT,
+    sex             TEXT,
+    modifier        TEXT,
+    aspect          TEXT,
+    biocuration     TEXT
+);
+
+-- -----------------------------------------------------
+-- Copy CSV to database
+-- -----------------------------------------------------
+COPY gd.HPO_disease (database_id, disease_name, qualifier, hpo_id,
+reference, evidence, onset, frequency, sex, modifier, aspect, biocuration
+) FROM '%DIR%' DELIMITER E'\t' CSV HEADER;
+
+-- -----------------------------------------------------
+-- Refresh Privileges
+-- -----------------------------------------------------
+GRANT ALL PRIVILEGES ON SCHEMA gd TO diver;
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA gd TO diver;
+GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA gd TO diver;
+GRANT ALL PRIVILEGES ON ALL FUNCTIONS IN SCHEMA gd TO diver;
+ALTER TABLE gd.HPO_disease OWNER TO diver;

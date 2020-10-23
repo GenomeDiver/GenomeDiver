@@ -1,0 +1,49 @@
+---
+analysis:
+    genomeAssembly: ${ref_assembly}
+    vcf: ${vcf}
+    ped:
+    proband:
+    hpoIds: [${hpo}]
+    analysisMode: PASS_ONLY
+    frequencySources: [
+        THOUSAND_GENOMES,
+        TOPMED,
+        UK10K,
+        ESP_AFRICAN_AMERICAN, ESP_EUROPEAN_AMERICAN, ESP_ALL,
+
+        EXAC_AFRICAN_INC_AFRICAN_AMERICAN, EXAC_AMERICAN,
+        EXAC_SOUTH_ASIAN, EXAC_EAST_ASIAN,
+        EXAC_FINNISH, EXAC_NON_FINNISH_EUROPEAN,
+        EXAC_OTHER,
+
+        GNOMAD_E_AFR,
+        GNOMAD_E_AMR,
+        GNOMAD_E_ASJ,
+        GNOMAD_E_EAS,
+        GNOMAD_E_FIN,
+        GNOMAD_E_NFE,
+        GNOMAD_E_OTH,
+        GNOMAD_E_SAS,
+
+        GNOMAD_G_AFR,
+        GNOMAD_G_AMR,
+        GNOMAD_G_ASJ,
+        GNOMAD_G_EAS,
+        GNOMAD_G_FIN,
+        GNOMAD_G_NFE,
+        GNOMAD_G_OTH,
+        GNOMAD_G_SAS
+    ]
+    pathogenicitySources: [POLYPHEN, MUTATION_TASTER, SIFT, CADD, REMM]
+    steps: [
+        hiPhivePrioritiser: {},
+        frequencyFilter: {maxFrequency: 10.0},
+        pathogenicityFilter: {keepNonPathogenic: true},
+        omimPrioritiser: {},
+    ]
+outputOptions:
+    outputContributingVariantsOnly: false
+    numGenes: 0
+    outputPrefix: $output_prefix
+    outputFormats: [HTML, JSON, TSV_GENE, TSV_VARIANT, VCF]

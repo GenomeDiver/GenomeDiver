@@ -1,0 +1,11 @@
+.ant-upload-drag-container {
+    background-image:url("/images/dna.svg");
+    background-repeat:no-repeat;
+    background-size: 60% 60%;
+    background-position:center;
+}
+.ant-upload-drag-container .ant-upload-text {
+    padding:10px;
+}
+
+/* .ant-upload.ant-upload-drag {} */

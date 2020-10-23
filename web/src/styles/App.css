@@ -1,0 +1,41 @@
+@import '~antd/dist/antd.css';
+@import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed');
+
+/* body {
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+} */
+
+body {
+    background: #f0f2f5;
+}
+
+/* Left justify */ 
+.ant-table-body > table > .ant-table-thead > tr > th {
+    text-align:left;
+}
+.ant-collapse > .ant-collapse-item > .ant-collapse-header {
+    padding: 8px 16px 8px 35px;
+}
+
+.ant-collapse-item:last-child > .ant-collapse-header {
+    background: #f7f7f7;
+}
+
+.ant-collapse-item:last-child > .ant-collapse-content {
+    background:transparent;
+}
+
+/* result/empty transition */
+.ant-result, .ant-empty{transition: opacity 300ms;}
+.result-enter, .result-appear{opacity:0;}
+.result-enter-active {opacity:1;}
+
+/* alert ul */
+.ant-alert-description ul {
+    padding-left:20px;
+    padding-right:40px;
+}
+
+.ant-progress-line {
+    width:90%;
+}

@@ -1,0 +1,7 @@
+numpy==1.16.0
+pathlib==1.0.1
+pronto==0.12.0
+psycopg2==2.8.6
+python-dateutil==2.7.5
+pytz==2018.9
+six==1.12.0
