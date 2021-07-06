@@ -19,7 +19,7 @@ printf "*********************************************************** \n"
 mkdir -p $DIR/download $DIR/sql
 
 # Download the latest gene_to_phenotype annotations
-wget http://compbio.charite.de/jenkins/job/hpo.annotations/lastSuccessfulBuild/artifact/util/annotation/genes_to_phenotype.txt -O $DOWNLOAD
+wget http://purl.obolibrary.org/obo/hp/hpoa/genes_to_phenotype.txt -O $DOWNLOAD
 
 # Fix Header of HPO Annotations so file is tab delimited
 perl -p -i -e 's/#Format: //g if $. == 1' $DOWNLOAD

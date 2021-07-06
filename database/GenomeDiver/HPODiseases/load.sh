@@ -13,7 +13,7 @@ printf "*********************************************************** \n"
 mkdir -p $DIR/download $DIR/sql
 
 # Download Annotations
-wget http://compbio.charite.de/jenkins/job/hpo.annotations.current/lastSuccessfulBuild/artifact/current/phenotype.hpoa -O $TAB
+wget http://purl.obolibrary.org/obo/hp/hpoa/phenotype.hpoa -O $TAB
 
 # Fix Header (remove comment and format header to valid csv)
 sed -i '' -e '/^[ \t]*#/d' $TAB
