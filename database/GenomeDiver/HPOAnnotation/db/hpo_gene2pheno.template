@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS gd.HPO_gene_to_phenotype (
 -- -----------------------------------------------------
 -- Copy CSV to database
 -- -----------------------------------------------------
-COPY gd.HPO_gene_to_phenotype (entrez_gene_id, entrez_gene_symbol, hpo_term, hpo_id) FROM '%DIR%' DELIMITER E'\t' CSV HEADER;
+\copy gd.HPO_gene_to_phenotype (entrez_gene_id, entrez_gene_symbol, hpo_term, hpo_id) FROM pstdin DELIMITER E'\t' CSV HEADER;
 
 -- -----------------------------------------------------
 -- Generate lexical tokens (tsvector) on 'hpo_term'
