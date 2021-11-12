@@ -1,0 +1,42 @@
+
+<!-- THIS IS A TEMPLATE FILE  
+    - Fill out postgres credentials: {username} and {password} 
+    - Rename .template to jooq-codegen.xml 
+    - Assumes database is named genome_diver with schema named "gd"  
+-->
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<configuration xmlns="http://www.jooq.org/xsd/jooq-codegen-3.11.0.xsd">
+    <jdbc>
+        <driver>org.postgresql.Driver</driver>
+        <url>jdbc:postgresql://localhost:5432/genome_diver</url>
+        <user>{username}</user>
+        <password>{password}</password>
+    </jdbc>
+    <generator>
+         <name>org.jooq.codegen.ScalaGenerator</name>
+         <database>
+
+            <name>org.jooq.meta.postgres.PostgresDatabase</name>
+            <includes>.*</includes>
+            <excludes></excludes>
+
+            <!-- Postgres has some .public schema that gets read in => not good -->
+            <inputSchema>gd</inputSchema>
+
+             <!-- Postgres DATE type to JODA: DateTime, pinned to "date_of.*" regex -->
+            <forcedTypes>
+             <forcedType>
+                 <userType>org.joda.time.DateTime</userType>
+                 <converter>org.nygenome.genomediver.conversion.JodaDateTimeConverter</converter>
+                 <expression>.*\.DATE_OF_.*</expression>
+             </forcedType>
+            </forcedTypes>
+
+        </database>
+        <target>
+            <packageName>org.nygenome.genomediver.db</packageName>
+            <directory>${sourceManaged}</directory>
+        </target>
+    </generator> 
+</configuration>
